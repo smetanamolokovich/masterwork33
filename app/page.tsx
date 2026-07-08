@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { Mail, ArrowUpRight } from 'lucide-react'
@@ -31,36 +30,41 @@ const projects = [
     domain: 'Solární energie · Poptávkový web',
     title: 'Svitera',
     url: 'https://svitera.vercel.app',
-    image: '/projects/svitera.png',
+    img: '/portfolio/svitera.webp',
     sub: 'Landing page pro firmu instalující fotovoltaiku — kalkulace úspory, reference a poptávkový formulář s odpovědí do 24 hodin.',
+    role: 'Návrh, vývoj a nasazení — Next.js, Vercel.',
   },
   {
     domain: 'Kadeřnictví & barbershop · Rezervace',
     title: 'Hříva',
     url: 'https://hriva-salon.vercel.app',
-    image: '/projects/hriva-salon.png',
+    img: '/portfolio/hriva.webp',
     sub: 'Web kadeřnického studia v centru Prahy s online rezervací termínu, přehledem služeb, týmu a členskými plány.',
+    role: 'Kompletní web na míru — design, vývoj, rezervační modul, Vercel.',
   },
   {
     domain: 'Pražírna kávy · E-shop',
     title: 'Zrnko',
     url: 'https://zrnko-eshop.vercel.app',
-    image: '/projects/zrnko-eshop.png',
+    img: '/portfolio/zrnko.webp',
     sub: 'E-shop s výběrovou kávou — filtrování podle pražení a ceny, košík, měsíční předplatné a doprava zdarma nad 800 Kč.',
+    role: 'E-shop s filtrem a fungujícím košíkem — Next.js, Vercel.',
   },
   {
     domain: 'Restaurace · Rezervace stolu',
     title: 'Bistro Kořen',
     url: 'https://koren-bistro.vercel.app',
-    image: '/projects/koren-bistro.png',
+    img: '/portfolio/koren.webp',
     sub: 'Web bistra se sezónním menu, galerií a online rezervací stolu podle data, času a počtu hostů.',
+    role: 'Web restaurace s online menu a rezervačním formulářem.',
   },
   {
     domain: 'Logistika · Přepravní společnost',
     title: 'Cargon',
     url: 'https://cargon-logistics.vercel.app',
-    image: '/projects/cargon-logistics.png',
+    img: '/portfolio/cargon.webp',
     sub: 'Web přepravní firmy s kalkulací ceny přepravy, sledováním zásilky v reálném čase a přehledem služeb (paletová, kusová i chlazená doprava).',
+    role: 'Landing s animacemi a demo poptávkovým formulářem.',
   },
 ]
 
@@ -154,6 +158,9 @@ export default function Page() {
                 LinkedIn ↗
               </a>
             </Button>
+            <Button asChild className="btn-ghost">
+              <a href="tel:+420773878761">Zavolat</a>
+            </Button>
           </div>
         </header>
 
@@ -187,21 +194,19 @@ export default function Page() {
                 key={p.title}
               >
                 <div className="proj-thumb">
-                  <Image
-                    src={p.image}
-                    alt={p.title}
-                    fill
-                    sizes="(max-width: 760px) 100vw, 50vw"
-                    style={{ objectFit: 'cover', objectPosition: 'top' }}
+                  <img
+                    src={p.img}
+                    alt={`${p.title} — náhled webu`}
+                    loading="lazy"
                   />
                 </div>
                 <div className="proj-body">
                   <span className="proj-domain">{p.domain}</span>
-                  <h3 className="disp">{p.title}</h3>
+                  <h3 className="disp">
+                    {p.title} <span className="proj-arrow">↗</span>
+                  </h3>
                   <p className="sub">{p.sub}</p>
-                  <span className="proj-link">
-                    Navštívit web <ArrowUpRight size={13} />
-                  </span>
+                  <p className="proj-role">{p.role}</p>
                 </div>
               </a>
             ))}
