@@ -66,6 +66,14 @@ const projects = [
     sub: 'Web přepravní firmy s kalkulací ceny přepravy, sledováním zásilky v reálném čase a přehledem služeb (paletová, kusová i chlazená doprava).',
     role: 'Landing s animacemi a demo poptávkovým formulářem.',
   },
+  {
+    domain: 'Reality · Katalog nemovitostí',
+    title: 'Realia',
+    url: 'https://realia-cz.vercel.app',
+    img: '/portfolio/realia.webp',
+    sub: 'Web realitní kanceláře s katalogem nemovitostí, filtrováním podle typu, lokality a ceny a poptávkovým formulářem.',
+    role: 'Realitní web s katalogem a vyhledáváním — Next.js, Vercel.',
+  },
 ]
 
 const process = [
