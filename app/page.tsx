@@ -99,30 +99,6 @@ const process = [
   },
 ]
 
-const pricing = [
-  {
-    plan: 'Automatizace',
-    amount: 'od 5 000 Kč',
-    unit: 'menší skript / úkol',
-    desc: 'Scraping, autoreply, jednorázová automatizace nebo integrace.',
-    feat: false,
-  },
-  {
-    plan: 'Aplikace na míru',
-    amount: 'od 25 000 Kč',
-    unit: 'fixní cena',
-    desc: 'Web, interní systém nebo aplikace s pevným rozsahem a termínem.',
-    feat: true,
-  },
-  {
-    plan: 'Hodinově',
-    amount: 'od 1 000 Kč',
-    unit: '/ hodina',
-    desc: 'Dlouhodobá spolupráce, rozvoj a údržba existujícího projektu.',
-    feat: false,
-  },
-]
-
 export default function Page() {
   return (
     <div className="pf">
@@ -235,23 +211,6 @@ export default function Page() {
               </div>
             ))}
           </div>
-          <div className="price-grid">
-            {pricing.map((p) => (
-              <div
-                className={p.feat ? 'price-card feat' : 'price-card'}
-                key={p.plan}
-              >
-                <span className="plan">{p.plan}</span>
-                <span className="amount">{p.amount}</span>
-                <span className="unit">{p.unit}</span>
-                <span className="desc">{p.desc}</span>
-              </div>
-            ))}
-          </div>
-          <p className="price-note">
-            // Ceny jsou orientační — finální cena vždy podle konkrétního
-            zadání.
-          </p>
         </section>
 
         <section className="contact">
